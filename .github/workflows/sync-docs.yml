@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Documentation repo
         uses: actions/checkout@v4
         with:
-          repository: ServerlessLLM/serverlessllm.github.io
+          repository: MartinRepo/serverlessllm.github.io
           path: docs-site
           token: ${{ secrets.DOCS_GITHUB_TOKEN }}
           fetch-depth: 0
@@ -58,7 +58,7 @@ jobs:
 
             # Set up authentication with the PAT or fallback to GITHUB_TOKEN
             TOKEN="${{ secrets.DOCS_GITHUB_TOKEN }}"
-            git remote set-url origin "https://x-access-token:${TOKEN}@github.com/ServerlessLLM/serverlessllm.github.io.git"
+            git remote set-url origin "https://x-access-token:${TOKEN}@github.com/MartinRepo/serverlessllm.github.io.git"
 
             # Push with retry logic
             max_retries=3

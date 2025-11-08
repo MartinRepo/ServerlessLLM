@@ -25,7 +25,7 @@ jobs:
       - name: Checkout documentation repository
         uses: actions/checkout@v4
         with:
-          repository: ServerlessLLM/serverlessllm.github.io
+          repository: MartinRepo/serverlessllm.github.io
           path: docs-site
 
       - name: Setup Node.js
