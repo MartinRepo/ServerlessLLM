@@ -38,7 +38,7 @@ jobs:
       - name: Checkout Documentation repo
         uses: actions/checkout@v4
         with:
-          repository: ServerlessLLM/serverlessllm.github.io
+          repository: MartinRepo/serverlessllm.github.io
           path: docs-site
           token: ${{ secrets.DOCS_GITHUB_TOKEN }}
           fetch-depth: 0
@@ -75,7 +75,7 @@ jobs:
       - name: Restore latest docs to docs/ directory
         run: |
           # Checkout latest main branch to get current development docs
-          git clone --depth 1 --branch main https://github.com/ServerlessLLM/ServerlessLLM.git source-latest
+          git clone --depth 1 --branch main https://github.com/MartinRepo/ServerlessLLM.git source-latest
 
           # Remove tagged docs and restore latest
           rm -rf docs-site/docs/*
@@ -113,7 +113,7 @@ jobs:
 
             # Set up authentication with the PAT
             TOKEN="${{ secrets.DOCS_GITHUB_TOKEN }}"
-            git remote set-url origin "https://x-access-token:${TOKEN}@github.com/ServerlessLLM/serverlessllm.github.io.git"
+            git remote set-url origin "https://x-access-token:${TOKEN}@github.com/MartinRepo/serverlessllm.github.io.git"
 
             # Push with retry logic
             max_retries=3
